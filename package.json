@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MpParanhos/upList/issues"
   },
-  "homepage": "https://github.com/MpParanhos/upList#readme"
+  "homepage": "https://github.com/MpParanhos/upList#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }

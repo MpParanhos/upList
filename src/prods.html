@@ -12,6 +12,7 @@
             <th>Código</th>
             <th>Nome</th>
             <th>Descrição</th>
+            <th>Quantidade</th>
             <th>Fabricante</th>
             <th>Data / Hora</th>
             <th>Controles</th>
@@ -23,6 +24,38 @@
     <a href="../index.html">
         <button id="btnVoltar">Voltar</button>
     </a>
+
+    <div class="popUpWrapper">
+        <div class="popUp">
+            <div class="popUpClose">
+                X
+            <div class="popUpContent">
+                <div class="codigo">
+                        <label>Código</label>
+                        <label id="lblCod"></label>
+                </div>
+                <div>
+                    <label>Nome:</label>
+                    <input type="text" id="inpNome">
+
+                    <label>Descrição:</label>
+                    <input type="text" id="inpDesc">
+
+                    <label>Quantidade:</label>
+                    <input type="text" id="inpQtda">
+
+                    <label>Fabricante:</label>
+                    <input type="text" id="inpFab">
+                </div>
+                <div id="btnAlterar" class="closeLinkPopUp">
+                    Alterar
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="../js/prods.js"></script>
 </body>
 </html>
