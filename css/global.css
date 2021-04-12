@@ -1,0 +1,28 @@
+.container{
+    
+}
+
+.title{
+    font-size: 25px;
+    text-align: center;
+    color: deepskyblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.subtitle{
+    font-size: 20px;
+    text-align: center;
+    color: deepskyblue;
+    font-family: 'Courier New', Courier, monospace
+}
+
+button{
+    display: block;
+    margin: 30px;
+    background-color: dodgerblue;
+    color: floralwhite;
+    border: 0;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
