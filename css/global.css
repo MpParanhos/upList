@@ -1,14 +1,14 @@
 .container{
     
 }
-.titulo{
+.title{
     font-size: 25px;
     text-align: center;
     color: dodgerblue;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.tituloSub{
+.subtitle{
     font-size: 20px;
     text-align: center;
     color: dodgerblue;
@@ -24,5 +24,16 @@ button {
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 4px;
+}
 
+#btnprods {
+    display: block;
+    margin: 30px;
+    background-color: dodgerblue;
+    color: floralwhite;
+    border: 0;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
 }

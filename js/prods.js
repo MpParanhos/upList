@@ -67,7 +67,7 @@ function updateProds(){
 
     console.log('Código do produto = ' + codProd);
 
-    api.put('produtos/' + codPro, data).then(res=>{
+    api.put('produtos/' + codProd, data).then(res=>{
         console.log('Alteração realizada!');
         consultaGeral();
     }).catch(error=> console.log('Erro ao realizar a alteração'));
