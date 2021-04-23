@@ -81,8 +81,8 @@ input {
     display: flex;
     height: 45px;
     padding: 10px;
-    width: 250px;
-    margin-left: 80%;
+    width: 300px;
+    margin-left: auto;
 }
 
 #searchIcon{
@@ -90,11 +90,21 @@ input {
     height: 15px;
 }
 
-#searchAction{
+#btnSearch{
     margin-top: 0px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 #tInput{
     margin-top: 1px;
+    width: 100px;
+}
+
+#selectBox{
+    margin-top: 1px;
+    margin-right: 10px; 
+}
+
+#boxSel{
+    height: 35px;
 }

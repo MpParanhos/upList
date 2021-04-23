@@ -8,6 +8,10 @@ const inpDesc = document.getElementById('inpDesc');
 const inpQtda = document.getElementById('inpQtda');
 const inpFab = document.getElementById('inpFab');
 
+const btnSearch = document.getElementById('btnSearch');
+const boxSel = document.getElementById('boxSel');
+const tInput = document.getElementById('tInput');
+
 const btnAlterar = document.getElementById('btnAlterar');
 
 const btnFirst = document.getElementById('btnFirst');
@@ -46,6 +50,26 @@ function consultaGeral(){
         populateList();        
     })
 }
+
+function consultaEspec(value){
+    api.get('produto/' + value).then(res=>{
+        data = res.data;
+        numberElements = data.length;
+        //console.log(numberElements);
+
+        state = {
+            page: 1,
+            totalPage: Math.ceil(numberElements / 5)
+        }
+        //console.log(state.totalPage);
+        populateList();        
+    })
+}
+btnSearch.onclick = ()=>{
+    consultaEspec(tInput.value);
+}
+
+
 
 function populateList(){
     let i, tr;

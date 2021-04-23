@@ -9,8 +9,15 @@
 <body>
     
     <div class="searchArea">
+        <div id="selectBox">
+            <select name="select" id="boxSel">
+            <option value="id" selected>ID</option>
+            <option value="nome">Nome</option>
+            <option value="fabricante">Fabricante</option>
+            </select>
+        </div>
         <div><input type="text" id="tInput" placeholder="Pesquisa" autofocus></div>
-        <div><button id="searchAction"><img src="../img/loupe.png" id="searchIcon"></button></div>
+        <div><button id="btnSearch"><img src="../img/loupe.png" id="searchIcon"></button></div>
     </div>
     <table id="tbProds">
         <thead>
