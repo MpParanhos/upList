@@ -79,11 +79,10 @@ input {
 
 .searchArea{
     display: flex;
-    height: 50px;
+    height: 45px;
     padding: 10px;
     width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 80%;
 }
 
 #searchIcon{
@@ -91,8 +90,11 @@ input {
     height: 15px;
 }
 
-
 #searchAction{
     margin-top: 0px;
-    margin-left: 20px;
+    margin-left: 15px;
+}
+
+#tInput{
+    margin-top: 1px;
 }

@@ -28,7 +28,6 @@ button {
 
 #btnprods {
     display: block;
-    margin: 30px;
     background-color: dodgerblue;
     color: floralwhite;
     border: 0;
@@ -36,6 +35,9 @@ button {
     padding: 10px 15px;
     border-radius: 4px;
     text-align: center;
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .paginate{
