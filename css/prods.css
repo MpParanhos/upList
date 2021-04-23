@@ -76,3 +76,23 @@ input {
     text-decoration: none;
 
 }
+
+.searchArea{
+    display: flex;
+    height: 50px;
+    padding: 10px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#searchIcon{
+    width: 15px;
+    height: 15px;
+}
+
+
+#searchAction{
+    margin-top: 0px;
+    margin-left: 20px;
+}
