@@ -51,19 +51,34 @@ function consultaGeral(){
     })
 }
 
-function consultaEspec(value){
-    api.get('produto/' + value).then(res=>{
-        data = res.data;
-        numberElements = data.length;
-        //console.log(numberElements);
+function consultaEspec(value){    
+    if(boxSel.value === "cod"){
+        api.get('produto/' + value).then(res=>{
+            data = res.data;
+            numberElements = data.length;
+            //console.log(numberElements);
 
-        state = {
-            page: 1,
-            totalPage: Math.ceil(numberElements / 5)
-        }
-        //console.log(state.totalPage);
-        populateList();        
-    })
+            state = {
+                page: 1,
+                totalPage: Math.ceil(numberElements / 5)
+            }
+            //console.log(state.totalPage);
+            populateList();        
+        })
+    }if(boxSel.value === "nome"){
+        api.get('produtos/' + value).then(res=>{
+            data = res.data;
+            numberElements = data.length;
+            //console.log(numberElements);
+    
+            state = {
+                page: 1,
+                totalPage: Math.ceil(numberElements / 5)
+            }
+            //console.log(state.totalPage);
+            populateList();        
+        })
+    }  
 }
 btnSearch.onclick = ()=>{
     consultaEspec(tInput.value);
@@ -124,7 +139,7 @@ function updateProds(){
 
     console.log('Código do produto = ' + codProd);
 
-    api.put('produtos/' + codProd, data).then(res=>{
+    api.put('produto/' + codProd, data).then(res=>{
         console.log('Alteração realizada!');
         consultaGeral();
     }).catch(error=> console.log('Erro ao realizar a alteração'));
