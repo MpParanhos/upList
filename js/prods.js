@@ -78,7 +78,20 @@ function consultaEspec(value){
             //console.log(state.totalPage);
             populateList();        
         })
-    }  
+    }if(boxSel.value === "fabricante"){
+        api.get('produtosfab/' + value).then(res=>{
+            data = res.data;
+            numberElements = data.length;
+            //console.log(numberElements);
+    
+            state = {
+                page: 1,
+                totalPage: Math.ceil(numberElements / 5)
+            }
+            //console.log(state.totalPage);
+            populateList();        
+        })
+    }    
 }
 btnSearch.onclick = ()=>{
     consultaEspec(tInput.value);
