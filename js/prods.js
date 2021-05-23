@@ -8,6 +8,12 @@ const inpDesc = document.getElementById('inpDesc');
 const inpQtda = document.getElementById('inpQtda');
 const inpFab = document.getElementById('inpFab');
 
+const lblCodAdd = document.getElementById('lblCodAdd');
+const inpNomeAdd = document.getElementById('inpNomeAdd');
+const inpDescAdd = document.getElementById('inpDescAdd');
+const inpQtdaAdd = document.getElementById('inpQtdaAdd');
+const inpFabAdd = document.getElementById('inpFabAdd');
+
 const btnSearch = document.getElementById('btnSearch');
 const boxSel = document.getElementById('boxSel');
 const tInput = document.getElementById('tInput');
@@ -15,6 +21,9 @@ const tInput = document.getElementById('tInput');
 const btnAdd = document.getElementById('btnAdd');
 
 const btnAlterar = document.getElementById('btnAlterar');
+const btnDeleteS = document.getElementById('btnDeleteS');
+const btnDeleteN = document.getElementById('btnDeleteN');
+const btnInsert = document.getElementById('btnInsert');
 
 const btnFirst = document.getElementById('btnFirst');
 const btnPrev = document.getElementById('btnPrev');
@@ -24,6 +33,8 @@ const btnLast = document.getElementById('btnLast');
 const lblPage = document.getElementById('lblPage');
 
 const popUp = document.querySelector('.popUpWrapper');
+const popUpDelete = document.querySelector('.popUpDelete');
+const popUpInsert = document.querySelector('.popUpInsert');
 
 let data, numberElements;
 
@@ -119,7 +130,7 @@ function populateList(){
                 '<td>' + paginateItens[i].qtda + '</td>' +
                 '<td>' + paginateItens[i].fabricante + '</td>' +
                 '<td>' + paginateItens[i].datahora + '</td>' +
-                '<td> <a id="btnUpdate" onclick="onEdit(this)"> <img class="imgUpdate" src="../img/updateIcon.png"></img> </a> <a id="btnDelete" onclick="onEdit(this)"> <img class="imgUpdate" src="../img/delete.png"></img> </a></td>'
+                '<td> <a id="btnUpdate" onclick="onEdit(this)"> <img class="imgUpdate" src="../img/updateIcon.png"></img> </a> <a id="btnDelete" onclick="onDel(this)"> <img class="imgUpdate" src="../img/delete.png"></img> </a></td>'
              '</tr>';
         tbodyList.innerHTML += tr;
     };
@@ -136,6 +147,38 @@ function onEdit(td){
     inpDesc.value = dataSelection.cells[2].innerHTML;
     inpQtda.value = dataSelection.cells[3].innerHTML;
     inpFab.value = dataSelection.cells[4].innerHTML;
+}
+
+function onDel(td){
+    let dataSelection = td.parentElement.parentElement;
+    
+    popUpDelete.style.display= 'block'
+    lblCod.innerHTML = dataSelection.cells[0].innerHTML;
+    console.log(dataSelection);
+}
+
+function deleteProd(){
+    let codProd = lblCod.innerHTML;
+
+    data = {
+        'nome': nomeProd,
+        'descri': descProd,
+        'qtda': qtdaProd,
+        'fabricante': fabProd
+    };
+
+    console.log('Código do produto = ' + codProd);
+
+    api.del('produto/' + codProd, data).then(res=>{
+        console.log('Exclusão Realizada!');
+        consultaGeral();
+    }).catch(error=> console.log('Erro ao realizar a exclusão'));
+}
+btnDeleteS.onclick = ()=>{
+    DeleteProd();
+}
+btnDeleteN.onclick = ()=>{
+
 }
 
 function updateProds(){
@@ -165,6 +208,26 @@ btnAlterar.onclick = ()=>{
 }
 
 popUp.addEventListener('click', event =>{
+    const classClick = event.target.classList[0];
+    //console.log(classClick); //Show the class clicked
+    if (classClick === 'popUpClose' ||
+            classClick === 'closeLinkPopUp')
+            {
+                popUp.style.display = 'none' 
+            }
+    
+});
+popUpDelete.addEventListener('click', event =>{
+    const classClick = event.target.classList[0];
+    //console.log(classClick); //Show the class clicked
+    if (classClick === 'popUpClose' ||
+            classClick === 'closeLinkPopUp')
+            {
+                popUp.style.display = 'none' 
+            }
+    
+});
+popUpInsert.addEventListener('click', event =>{
     const classClick = event.target.classList[0];
     //console.log(classClick); //Show the class clicked
     if (classClick === 'popUpClose' ||
