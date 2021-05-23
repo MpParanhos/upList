@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="../css/prods.css">
 </head>
 <body>
-    
-    <div class="searchArea">
-        <div id="selectBox">
-            <select name="select" id="boxSel">
-            <option value="cod" selected>ID</option>
-            <option value="nome">Nome</option>
-            <option value="fabricante">Fabricante</option>
-            </select>
+    <div class ="addArea">
+        <button id="btnAdd"><img src="../img/botao-de-sinal-de-mais.png" id="addButton"></button>
+        <div class="searchArea">            
+            <div id="selectBox">
+                <select name="select" id="boxSel">
+                <option value="cod" selected>ID</option>
+                <option value="nome">Nome</option>
+                <option value="fabricante">Fabricante</option>
+                </select>
+            </div>
+            <div><input type="text" id="tInput" placeholder="Pesquisa" autofocus></div>
+            <div><button id="btnSearch"><img src="../img/loupe.png" id="searchIcon"></button></div>
         </div>
-        <div><input type="text" id="tInput" placeholder="Pesquisa" autofocus></div>
-        <div><button id="btnSearch"><img src="../img/loupe.png" id="searchIcon"></button></div>
-    </div>
+    </div>      
     <table id="tbProds">
         <thead>
             <th>Código</th>
@@ -70,6 +72,54 @@
                 </div>
                 <div id="btnAlterar" class="closeLinkPopUp">
                     Alterar
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <div class="popUpDelete">
+        <div class="popUp">
+            <div class="popUpClose">X</div>                
+            <div class="popUpContent">
+                <div>
+                    <label>Nome:</label>
+                    <input type="text" id="inpNome">
+
+                    <label>Descrição:</label>
+                    <input type="text" id="inpDesc">
+
+                    <label>Quantidade:</label>
+                    <input type="text" id="inpQtda">
+
+                    <label>Fabricante:</label>
+                    <input type="text" id="inpFab">
+                </div>
+                <div id="btnAlterar" class="closeLinkPopUp">
+                    Alterar
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <div class="popUpInsert">
+        <div class="popUp">
+            <div class="popUpClose">X</div>                
+            <div class="popUpContent">
+                <div>
+                    <label>Nome:</label>
+                    <input type="text" id="inpNome">
+
+                    <label>Descrição:</label>
+                    <input type="text" id="inpDesc">
+
+                    <label>Quantidade:</label>
+                    <input type="text" id="inpQtda">
+
+                    <label>Fabricante:</label>
+                    <input type="text" id="inpFab">
+                </div>
+                <div id="btnInsert" class="closeLinkPopUp">
+                    Inserir
                 </div>            
             </div>
         </div>

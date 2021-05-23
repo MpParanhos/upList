@@ -12,6 +12,8 @@ const btnSearch = document.getElementById('btnSearch');
 const boxSel = document.getElementById('boxSel');
 const tInput = document.getElementById('tInput');
 
+const btnAdd = document.getElementById('btnAdd');
+
 const btnAlterar = document.getElementById('btnAlterar');
 
 const btnFirst = document.getElementById('btnFirst');
@@ -117,7 +119,7 @@ function populateList(){
                 '<td>' + paginateItens[i].qtda + '</td>' +
                 '<td>' + paginateItens[i].fabricante + '</td>' +
                 '<td>' + paginateItens[i].datahora + '</td>' +
-                '<td> <a id="btnUpdate" onclick="onEdit(this)"> <img class="imgUpdate" src="../img/updateIcon.png"></img> </a></td>' 
+                '<td> <a id="btnUpdate" onclick="onEdit(this)"> <img class="imgUpdate" src="../img/updateIcon.png"></img> </a> <a id="btnDelete" onclick="onEdit(this)"> <img class="imgUpdate" src="../img/delete.png"></img> </a></td>'
              '</tr>';
         tbodyList.innerHTML += tr;
     };
