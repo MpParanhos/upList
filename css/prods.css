@@ -122,7 +122,8 @@ input {
 
 #tInput{
     margin-top: 1px;
-    width: 100px;
+    width: 60px;
+    text-align: center;
 }
 
 #selectBox{
@@ -132,6 +133,7 @@ input {
 
 #boxSel{
     height: 35px;  
+    width: 40px;
 }
 
 #addButton{

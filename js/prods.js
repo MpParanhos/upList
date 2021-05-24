@@ -279,4 +279,19 @@ btnLast.onclick = ()=>{
     //console.log(state.page);
 }
 
+boxSel.addEventListener('click', searchSize);
+
+function searchSize(){
+    if (boxSel.value === 'cod'){
+        tInput.style.width = '60px';
+        boxSel.style.width = '40px';
+    }if (boxSel.value === 'nome'){
+        tInput.style.width = '150px';
+        boxSel.style.width = '60px';
+    }if (boxSel.value === 'fabricante'){
+        tInput.style.width = '100px';
+        boxSel.style.width = '90px';
+    }
+}
+
 consultaGeral();
