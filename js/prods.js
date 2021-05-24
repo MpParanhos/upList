@@ -14,6 +14,8 @@ const inpDescAdd = document.getElementById('inpDescAdd');
 const inpQtdaAdd = document.getElementById('inpQtdaAdd');
 const inpFabAdd = document.getElementById('inpFabAdd');
 
+const lblCodDel = document.getElementById('lblCodDel');
+
 const btnSearch = document.getElementById('btnSearch');
 const boxSel = document.getElementById('boxSel');
 const tInput = document.getElementById('tInput');
@@ -153,32 +155,22 @@ function onDel(td){
     let dataSelection = td.parentElement.parentElement;
     
     popUpDelete.style.display= 'block'
-    lblCod.innerHTML = dataSelection.cells[0].innerHTML;
+    lblCodDel.innerHTML = dataSelection.cells[0].innerHTML;
     console.log(dataSelection);
 }
 
 function deleteProd(){
-    let codProd = lblCod.innerHTML;
-
-    data = {
-        'nome': nomeProd,
-        'descri': descProd,
-        'qtda': qtdaProd,
-        'fabricante': fabProd
-    };
-
+    let codProd = lblCodDel.innerHTML;
+    
     console.log('Código do produto = ' + codProd);
 
-    api.del('produto/' + codProd, data).then(res=>{
+    api.delete('produto/' + codProd).then(res=>{
         console.log('Exclusão Realizada!');
         consultaGeral();
     }).catch(error=> console.log('Erro ao realizar a exclusão'));
 }
 btnDeleteS.onclick = ()=>{
-    DeleteProd();
-}
-btnDeleteN.onclick = ()=>{
-
+    deleteProd();
 }
 
 function updateProds(){
@@ -223,7 +215,7 @@ popUpDelete.addEventListener('click', event =>{
     if (classClick === 'popUpClose' ||
             classClick === 'closeLinkPopUp')
             {
-                popUp.style.display = 'none' 
+                popUpDelete.style.display = 'none' 
             }
     
 });
@@ -233,7 +225,7 @@ popUpInsert.addEventListener('click', event =>{
     if (classClick === 'popUpClose' ||
             classClick === 'closeLinkPopUp')
             {
-                popUp.style.display = 'none' 
+                popUpInsert.style.display = 'none' 
             }
     
 });
