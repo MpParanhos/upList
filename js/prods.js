@@ -285,12 +285,15 @@ function searchSize(){
     if (boxSel.value === 'cod'){
         tInput.style.width = '60px';
         boxSel.style.width = '40px';
+        tInput.value = '';
     }if (boxSel.value === 'nome'){
         tInput.style.width = '150px';
         boxSel.style.width = '60px';
+        tInput.value = '';
     }if (boxSel.value === 'fabricante'){
         tInput.style.width = '100px';
         boxSel.style.width = '90px';
+        tInput.value = '';
     }
 }
 
